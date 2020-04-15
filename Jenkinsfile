@@ -20,8 +20,7 @@ pipeline {
                   }
                           }
 	    stage('Build Image') {
-     steps {
-         //sh
+		    steps {
          sh "docker build -t='erminnie/devopsgroup7demo-docker-webapp' ."
      }
  }
