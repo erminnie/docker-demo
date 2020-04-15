@@ -36,7 +36,7 @@ withCredentials([usernamePassword(credentialsId: 'docker', passwordVariable: 'pa
 }
 	    stage('Run DockerImage') {
 		    steps{ 
-		 sh "docker run -p 4000:3000 -d --name pipeline-jenkinsfile-docker1-demo erminnie/devopsgroup7demo-docker-webapp"
+		 sh "docker run -p 3000:3000 -d --name pipeline-jenkinsfile-docker1-demo erminnie/devopsgroup7demo-docker-webapp"
 		    }
               }
     }
