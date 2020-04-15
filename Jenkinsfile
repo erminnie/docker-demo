@@ -20,18 +20,19 @@ pipeline {
                   }
                           }
 	    stage('Build Image') {
-		    steps {
-         sh "docker build -t='erminnie/devopsgroup7demo-docker-webapp' ."
-     }
- }
- stage('Push Image') {
-     steps {
+     steps {
+         //sh
+         sh "docker build -t='erminnie/devopsgroup7demo-docker-webapp' ."
+     }
+}
+stage('Push Image') {
+     steps {
 withCredentials([usernamePassword(credentialsId: 'docker', passwordVariable: 'pass', usernameVariable: 'user')]) {
-             //sh
-    sh "docker login --username=${user} --password=${pass}"
-    sh "docker push erminnie/devopsgroup7demo-docker-webapp:latest"
-}                           
-     }
- }
+             //sh
+    sh "docker login --username=${user} --password=${pass}"
+    sh "docker push erminnie/devopsgroup7demo-docker-webapp:latest"
+}                           
+     }
+}
                     }
               }
